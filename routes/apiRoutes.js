@@ -6,7 +6,7 @@ const storage = require('../db/storage');
 
 router.get('/notes', (req, res) => {
     storage
-        .fetchNotes()
+        .getNotes()
         .then(notes => {
             res.json(notes)
         })
@@ -20,7 +20,7 @@ router.get('/notes', (req, res) => {
 router.post('/notes', (req, res) => {
     console.log(req.body)
     storage
-        .createNote(req.body)
+        .addNote(req.body)
         .then(note => {
             res.json(note)
         })
@@ -33,7 +33,7 @@ router.post('/notes', (req, res) => {
 
 router.delete('/notes/:id', (req, res) => {
     storage
-        .deleteNote(req.params.id)
+        .removeNote(req.params.id)
         .then(() => res.json({ ok: true }))
         .catch(err => res.status(500).json(err))
 })

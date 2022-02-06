@@ -6,9 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "cnb10100",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "uuid": "^8.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://https://github.com/cnb10100/notetaker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cnb10100/notetaker/issues"
   }
 }

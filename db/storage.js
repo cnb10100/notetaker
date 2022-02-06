@@ -13,7 +13,7 @@ class Storage {
         return writeFileAsync("db/db.json", JSON.stringify(note))
     }
 
-    createNote(note) {
+    addNote(note) {
         const { title, text } = note
 
         if (!title || !text) {
@@ -22,21 +22,21 @@ class Storage {
 
         const newNote = { title, text, id: uuid() }
 
-        return this.fetchNotes()
+        return this.getNotes()
             .then(notes => [...notes, newNote])
             .then(updatedNotes => this.write(updatedNotes))
             .then(() => this.newNote)
     }
 
-    fetchNotes() {
+    getNotes() {
         return this.read()
             .then(notes => {
                 return JSON.parse(notes) || [];
             })
     }
     
-    deleteNote(id) {
-        return this.fetchNotes()
+    removeNote(id) {
+        return this.getNotes()
             .then(notes => notes.filter(note => note.id !== id))
             .then(keptNotes => this.write(keptNotes))
     }
