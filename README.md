@@ -24,3 +24,9 @@ After cloning the repo, you must install the following packages using npm:
 - Express.js
 - CSS
 - HTML
+
+## Application Screenshots
+
+![Screenshot](note-takerpic1.png)
+![Screenshot](note-takerpic2.png)
+
